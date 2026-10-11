@@ -32,7 +32,7 @@ export const fillTool = defineBrowserTool({
     "Use browser_type instead only for keystroke-sensitive widgets (autocomplete, masked/segmented inputs).",
     "Fill sets the value but does not focus or submit. To submit a tag/autocomplete input, follow with browser_dispatch_key({ ref, key: 'Enter' }) — not browser_press_key, which targets the focused element and may miss this field.",
     "For a custom (div-based) dropdown, browser_fill won't validate against its option list — open it, run browser_snapshot, then browser_click the option's ref.",
-    "Confirm the returned field value matches what you intended.",
+    "Confirm the field value browser_fill returns matches what you intended.",
   ],
   parameters: FillArgs,
   concurrency: "serialized",

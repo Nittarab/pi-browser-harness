@@ -11,9 +11,12 @@ and tool-specific guidelines.
 
 - Operate only inside this session's owned Chrome window. Never reach into the
   user's other tabs or windows. Close owned tabs once no later step needs them.
-- Only tools in the mutation lane are serialized; observations may run concurrently
-  with them. \`browser_run_script\` bypasses that lane: keep mutating scripts sequential
-  with other browser calls. Parallelize only independent calls.
+- Mutating tools (click, type, fill, press_key, scroll, navigate, history, tab
+  switch/new/close, upload, download, headers, viewport, drag, web_search) are
+  serialized. Observations (snapshot, screenshot, page_info, current_tab, list_tabs,
+  console, network_requests, http_get, read_page, execute_js, wait, wait_for) may run
+  concurrently with them. \`browser_run_script\` bypasses that lane: keep mutating
+  scripts sequential with other browser calls. Parallelize only independent calls.
 - Agents sharing a session share its active tab. Check \`browser_current_tab\`
   before a mutation to confirm the expected tab when another agent may switch it.
 - Read any appended "Page changes" diff to confirm an interaction. Tools without a

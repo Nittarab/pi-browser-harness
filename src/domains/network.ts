@@ -223,7 +223,7 @@ export const networkRequestsTool = defineBrowserTool({
   promptSnippet: "Inspect recent network requests on the current page",
   promptGuidelines: [
     "Buffer is reset on tab switch — only requests on the current tab since attach are visible.",
-    "Use includeResponseBodies:true only when you need payloads.",
+    "Pass includeResponseBodies:true to browser_network_requests only when you need payloads.",
     "If bufferOverflowed:true in the result, older events were dropped (capacity 500 records/tab).",
   ],
   parameters: NetworkRequestsArgs,

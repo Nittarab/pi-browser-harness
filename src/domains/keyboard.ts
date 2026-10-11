@@ -83,7 +83,7 @@ export const pressKeyTool = defineBrowserTool({
   promptSnippet: "Press a key (Enter, Tab, Escape, arrows, or any character)",
   promptGuidelines: [
     "Use browser_press_key for keyboard shortcuts and navigation keys.",
-    "Combine modifier flags with bitwise OR: Ctrl+Shift = 2|8 = 10.",
+    "browser_press_key modifiers combine with bitwise OR: Ctrl+Shift = 2|8 = 10.",
   ],
   parameters: PressKeyArgs,
   concurrency: "serialized",
